@@ -68,5 +68,36 @@ namespace caixa_eletronico
             saldo += saldo * taxa;
             lbtSaldo.Text = saldo.ToString("c");
         }
+
+        private void lbtTaxa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblTaxa.Text = $"* Taxa: {taxa * 100}% a.c{timer1.Interval / 1000}s";
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Deseja mesmo sair da aplicação?",
+                "Banco menino ney", MessageBoxButtons.YesNo);
+            if (r == DialogResult.No)
+            {
+                e.Cancel = true;
+
+            }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MessageBox.Show("Tchau,pobre!");
+        }
     }
 }

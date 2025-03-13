@@ -38,6 +38,7 @@
             this.numLimite = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblTaxa = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.digitarValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLimite)).BeginInit();
@@ -139,14 +140,25 @@
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblTaxa
+            // 
+            this.lblTaxa.AutoSize = true;
+            this.lblTaxa.Location = new System.Drawing.Point(190, 184);
+            this.lblTaxa.Name = "lblTaxa";
+            this.lblTaxa.Size = new System.Drawing.Size(13, 13);
+            this.lblTaxa.TabIndex = 8;
+            this.lblTaxa.Text = "0";
+            this.lblTaxa.Click += new System.EventHandler(this.lbtTaxa_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 186);
+            this.label1.Location = new System.Drawing.Point(36, 184);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "TAXA:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
             // 
@@ -154,6 +166,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(265, 265);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTaxa);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numLimite);
             this.Controls.Add(this.btSacar);
@@ -164,6 +177,9 @@
             this.Controls.Add(this.digitarValor);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.digitarValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLimite)).EndInit();
             this.ResumeLayout(false);
@@ -182,6 +198,7 @@
         private System.Windows.Forms.NumericUpDown numLimite;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblTaxa;
         private System.Windows.Forms.Label label1;
     }
 }
